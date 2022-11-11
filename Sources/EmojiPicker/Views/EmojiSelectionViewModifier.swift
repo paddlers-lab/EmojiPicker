@@ -59,7 +59,6 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
           .presentationDetents([.medium])
           .background(BackgroundClearSheet())
       }
-      .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }
 
