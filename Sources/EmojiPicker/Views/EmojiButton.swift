@@ -4,6 +4,7 @@ struct EmojiButton: View {
   
   @Binding var selected: String?
   var emoji: String
+  var action: () -> Void
   
   private var isSelected: Bool {
     selected == emoji
@@ -13,7 +14,7 @@ struct EmojiButton: View {
     Text(emoji)
       .font(.system(size: 24))
       .onTapGesture {
-        self.selected = emoji
+        action()
       }
       .padding(6)
       .background(isSelected ? Color.secondarySystemBackground : .clear)

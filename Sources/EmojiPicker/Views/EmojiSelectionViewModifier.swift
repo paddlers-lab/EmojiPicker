@@ -35,8 +35,11 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
       ScrollView(.vertical) {
         LazyVGrid(columns: Array(repeating: GridItem(), count: 5), spacing: 15) {
           let emojis: [String] = emojis.categories.first(where: { $0.icon == selectedCategory })?.emojis ?? []
-          ForEach(emojis, id: \.self) { emojii in
-            EmojiButton(selected: self.$emoji, emoji: emojii)
+          ForEach(emojis, id: \.self) { emoji in
+            EmojiButton(selected: self.$emoji, emoji: emoji) {
+              self.emoji = emoji
+              self.isPresented = false
+            }
           }
         }
         .animation(nil, value: selectedCategory)
