@@ -21,11 +21,9 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
         .frame(width: 30, height: 5)
         .foregroundColor(Color.systemGray3)
         .padding(.top)
-      ScrollView(.horizontal) {
-        LazyHGrid(rows: [GridItem()]) {
-          ForEach(emojis.categories.map { $0.icon }, id: \.self) { icon in
-            CategoryButton(selectedCategory: $selectedCategory, icon: icon, namespace: namespace)
-          }
+      LazyVGrid(columns: Array(repeating: GridItem(), count: emojis.categories.count), spacing: 15) {
+        ForEach(emojis.categories.map { $0.icon }, id: \.self) { icon in
+          CategoryButton(selectedCategory: $selectedCategory, icon: icon, namespace: namespace)
         }
       }
       .padding(.horizontal)
@@ -42,9 +40,9 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
             }
           }
         }
+        .padding()
         .animation(nil, value: selectedCategory)
       }
-      .padding()
     }
     .background(Color(uiColor: .systemBackground))
     .cornerRadius(36)
