@@ -33,7 +33,7 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
       Divider()
       
       ScrollView(.vertical) {
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 5), spacing: 15) {
+        LazyVGrid(columns: Array(repeating: GridItem(), count: 8), spacing: 15) {
           let emojis: [String] = emojis.categories.first(where: { $0.icon == selectedCategory })?.emojis ?? []
           ForEach(emojis, id: \.self) { emoji in
             EmojiButton(selected: self.$emoji, emoji: emoji) {
@@ -48,7 +48,7 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
     }
     .background(Color(uiColor: .systemBackground))
     .cornerRadius(36)
-    .shadow(color: .black.opacity(0.1), radius: 60, x: 0, y: 10)
+    .shadow(color: .black.opacity(0.1), radius: 0, x: 0, y: 10)
     .padding(.horizontal)
     .padding(.bottom, 80)
   }

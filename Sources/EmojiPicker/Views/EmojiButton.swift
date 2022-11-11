@@ -16,7 +16,7 @@ struct EmojiButton: View {
       .onTapGesture {
         action()
       }
-      .padding(6)
+      .padding(1)
       .background(isSelected ? Color.secondarySystemBackground : .clear)
       .cornerRadius(10)
   }
