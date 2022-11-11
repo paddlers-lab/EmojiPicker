@@ -66,15 +66,15 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
 }
 
 fileprivate struct BackgroundClearSheet: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        let view = UIView()
-        Task {
-            view.superview?.superview?.backgroundColor = .clear
-        }
-        return view
+  func makeUIView(context: Context) -> UIView {
+    let view = UIView()
+    Task {
+      view.superview?.superview?.backgroundColor = .clear
     }
-
-    func updateUIView(_ uiView: UIView, context: Context) {}
+    return view
+  }
+  
+  func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
 
