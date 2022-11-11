@@ -46,7 +46,7 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
     }
     .background(Color(uiColor: .systemBackground))
     .cornerRadius(36)
-    .shadow(color: .black.opacity(0.1), radius: 0, x: 0, y: 10)
+    .shadow(color: .black.opacity(0.1), radius: 60, x: 0, y: 10)
     .padding(.horizontal)
     .padding(.bottom, 80)
   }
