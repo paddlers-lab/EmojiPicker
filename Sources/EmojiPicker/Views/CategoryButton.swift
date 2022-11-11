@@ -19,7 +19,6 @@ struct CategoryButton: View {
           .foregroundColor(.accentColor)
       }
     }
-    .frame(width: 80, height: 80)
     .onTapGesture {
       withAnimation(.timingCurve(0.250, 0.8, 0.1, 1)) {
         selectedCategory = icon

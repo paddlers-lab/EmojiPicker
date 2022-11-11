@@ -30,7 +30,7 @@ public struct EmojiPicker: View {
         .foregroundColor(.accentColor)
     }
     .emojiSelector(emojis: emojis,isPresented: $isPresentedSelector, emoji: $selection)
-    .contentShape(Rectangle())
+    .contentShape(Rectangle()) // WHY: HStackのSpacerに対してもタップ判定を行う
     .onTapGesture {
       withAnimation(.easeInOut) {
         isPresentedSelector = true
