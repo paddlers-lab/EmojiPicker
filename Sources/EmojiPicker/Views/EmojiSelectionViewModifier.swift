@@ -43,21 +43,29 @@ fileprivate struct EmojiSelectionViewModifier: ViewModifier {
         .padding()
         .animation(nil, value: selectedCategory)
       }
+      .frame(height: 250)
     }
     .background(Color(uiColor: .systemBackground))
-    .cornerRadius(36)
-    .shadow(color: .black.opacity(0.1), radius: 60, x: 0, y: 10)
-    .padding(.horizontal)
-    .padding(.bottom, 80)
+    .cornerRadius(45)
+    .padding(.horizontal, 12)
   }
   
   func body(content: Content) -> some View {
     content
       .sheet(isPresented: $isPresented) {
-        selector
-          .offset(.init(width: 0, height: 70))
-          .presentationDetents([.medium])
-          .background(BackgroundClearSheet())
+        ZStack {
+          Rectangle()
+            .opacity(.leastNormalMagnitude)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onTapGesture {
+              self.isPresented = false
+            }
+          VStack {
+            Spacer()
+            selector
+              .background(BackgroundClearSheet())
+          }
+        }
       }
   }
 }

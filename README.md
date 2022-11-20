@@ -2,7 +2,7 @@
 
 Simple Single Select EmojiPicker
 
-Pure SwiftUI & iOS16+ Support 
+Pure SwiftUI & iOS15.0+ Support 
 
 ![EmojiPicker](https://user-images.githubusercontent.com/19603983/201375255-3dfd24ad-d5a0-44ac-985f-6bdbafd8fdea.gif)
 
